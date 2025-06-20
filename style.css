@@ -94,7 +94,7 @@
         /* Главный баннер */
         .fullscreenHero {
             background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
-                        url('/img/cc1.jpg') center/cover no-repeat;
+                        url('img/cc1.jpg') center/cover no-repeat;
             height: 100vh;
             min-height: 500px;
             display: flex;
