@@ -21,7 +21,7 @@
             line-height: 1.7;
             background-color: var(--primaryDark);
                background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
-                        url('./img/glamna5.jpg') center/cover no-repeat; 
+                        url('./img/glavna5.jpg') center/cover no-repeat; 
         }
 
         .appContainer {
