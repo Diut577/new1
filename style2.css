@@ -26,7 +26,7 @@
             min-height: 100vh;
             padding: 20px;
 background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
-                        url('../img/glavna2.jpg') center/cover no-repeat;
+                        url('./img/glavna2.jpg') center/cover no-repeat;
         }
 a {
   text-decoration: none;
