@@ -1,0 +1,532 @@
+:root {
+    --primaryDark: #222238;
+    --primaryLight: #16213e;
+    --accentOrange: #25e1cb;
+    --accentTeal: #00b4d8;
+    --textLight: #f8f9fa;
+    --textGray: #adb5bd;
+    --cardBg: #0f3460;
+}
+
+/* Все остальные стили оставить как были изначально */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--textLight);
+            line-height: 1.7;
+            background-color: var(--primaryDark);
+        }
+
+        .appContainer {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Хедер */
+        .topNavigationBar {
+            background-color: var(--primaryLight);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accentOrange);
+        }
+
+        .navInnerLayout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .eventLogo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accentOrange);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .mainMenu ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .menuOption {
+            color: var(--textLight);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .menuOption:hover {
+            color: var(--accentOrange);
+        }
+
+        .menuOption::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--accentOrange);
+            transition: width 0.3s;
+        }
+
+        .menuOption:hover::after {
+            width: 100%;
+        }
+
+        /* Главный баннер */
+        .fullscreenHero {
+            background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
+                        url('../img/glava1.jpeg') center/cover no-repeat;
+            height: 100vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .heroContentBlock {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .mainEventTitle {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accentOrange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .eventSubtitle {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--textLight);
+        }
+
+        /* Кнопки */
+        .actionButton {
+            display: inline-block;
+            background-color: var(--accentOrange);
+            color: var(--textLight);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .actionButton:hover {
+            background-color: #33aad1;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .altActionButton {
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid var(--accentTeal);
+            color: var(--accentTeal);
+            padding: 10px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .altActionButton:hover {
+            background-color: var(--accentTeal);
+            color: var(--textLight);
+        }
+
+        /* Секции */
+        .contentBlock {
+            padding: 60px 0;
+        }
+
+        .blockTitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--textLight);
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .blockTitle::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accentOrange);
+            margin: 15px auto 0;
+        }
+
+        .blockDescription {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: var(--textGray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+
+        /* О событии */
+        .eventInfoSection {
+            background-color: var(--primaryLight);
+        }
+
+        .infoFlexLayout {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .infoTextBlock {
+            width: 100%;
+        }
+
+        .infoTextBlock p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--textLight);
+        }
+
+        .highlightList {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .highlightPoint {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--textGray);
+            font-size: 1rem;
+        }
+
+        .highlightPoint::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accentOrange);
+            font-weight: bold;
+        }
+
+        video {
+            width: 90%;
+            max-width: 570px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--accentOrange);
+        }
+
+        .dataSection {
+            background-color: var(--primaryDark);
+        }
+
+        .metricsGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metricBox {
+            background-color: var(--cardBg);
+            padding: 30px 15px;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .metricBox:hover {
+            transform: translateY(-5px);
+            border-color: var(--accentOrange);
+        }
+
+        .bigNumber {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accentOrange);
+            margin-bottom: 10px;
+        }
+
+        .metricName {
+            font-size: 1rem;
+            color: var(--textGray);
+        }
+
+        .gameOverview {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--textLight);
+            background-color: var(--cardBg);
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accentOrange);
+        }
+
+        .collectiblesSection {
+            background-color: var(--primaryLight);
+        }
+
+        .collectiblesGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .collectibleCard {
+            background-color: var(--cardBg);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+        }
+
+        .collectibleCard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: var(--accentTeal);
+        }
+
+        .cardMedia {
+            background-color: var(--primaryDark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+        }
+
+        .cardMedia img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cardInfo {
+            padding: 20px;
+        }
+
+        .collectibleName {
+            margin: 0 0 12px;
+            color: var(--textLight);
+            font-size: 1.2rem;
+        }
+
+        .collectibleDetails {
+            margin: 0 0 12px;
+            color: var(--textGray);
+            font-size: 0.9rem;
+        }
+
+        .rarityTag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .legendaryRarity {
+            background-color: var(--accentOrange);
+            color: var(--textLight);
+        }
+
+        .epicRarity {
+            background-color: #6a4c93;
+            color: var(--textLight);
+        }
+
+        .mythicRarity {
+            background-color: #d62839;
+            color: var(--textLight);
+        }
+
+        .rareRarity {
+            background-color: var(--accentTeal);
+            color: var(--primaryDark);
+        }
+
+        .globalFooter {
+            background-color: var(--primaryDark);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--accentOrange);
+            margin-top: 30px;
+        }
+
+        .footerTextBlock {
+            color: var(--textGray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 15px;
+            padding: 0 15px;
+        }
+
+        .copyrightNotice {
+            color: var(--textGray);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .floatingTopButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            width: 40px;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: #25e1cb; 
+            color: white;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            opacity: 0;
+        }
+
+        .floatingTopButton.show {
+            opacity: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floatingTopButton:hover {
+            background: #20c7b3; 
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .floatingTopButton:active {
+            transform: scale(0.95); 
+        }
+
+        @media (min-width: 1024px) {
+            .infoFlexLayout {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+            
+            .infoTextBlock {
+                width: 55%;
+            }
+            
+            video {
+                width: 56%;
+                margin-top: 12px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .infoFlexLayout {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+            
+            .infoTextBlock {
+                width: 55%;
+            }
+            
+            video {
+                width: 40%;
+                margin-top: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .eventLogo {
+                font-size: 1.8rem;
+                margin-bottom: 0;
+            }
+            
+            .mainMenu ul {
+                gap: 30px;
+            }
+            
+            .menuOption {
+                font-size: 1.1rem;
+            }
+            
+            .mainEventTitle {
+                font-size: 3rem;
+            }
+            
+            .eventSubtitle {
+                font-size: 1.3rem;
+            }
+            
+            .contentBlock {
+                padding: 80px 0;
+            }
+            
+            .blockTitle {
+                font-size: 2.2rem;
+            }
+            
+            .blockDescription {
+                font-size: 1.1rem;
+            }
+            
+            .metricsGrid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .mainEventTitle {
+                font-size: 3.5rem;
+            }
+            
+            .contentBlock {
+                padding: 100px 0;
+            }
+            
+            .blockTitle {
+                font-size: 2.5rem;
+            }
+        }

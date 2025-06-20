@@ -1,0 +1,468 @@
+       :root {
+            --primary-dark: #222238;
+            --primary-light: #16213e;
+            --accent-orange: #25e1cb;
+            --accent-teal: #00b4d8;
+            --text-light: #f8f9fa;
+            --text-gray: #adb5bd;
+            --card-bg: #0f3460;
+            --completed: #4caf50;
+            --pending: #ff9800;
+            --danger: #ff4757;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-light);
+            line-height: 1.7;
+            background-color: var(--primary-dark);
+            min-width: 320px;
+            padding-top: 50px;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
+                    url('../img/glavna5.jpg') center/cover no-repeat fixed;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .summerfest-header {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 12px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-orange);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .summerfest-header-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .summerfest-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-shadow: 0 0 10px rgba(37, 225, 203, 0.4);
+            letter-spacing: 1px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .summerfest-nav-list {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 5px 0;
+            padding: 0;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .summerfest-nav-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summerfest-main-btn {
+            background-color: rgba(37, 225, 203, 0.1);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+        }
+
+        .summerfest-main-btn:hover {
+            background-color: rgba(37, 225, 203, 0.3);
+            box-shadow: 0 0 10px rgba(37, 225, 203, 0.3);
+        }
+
+        .summerfest-logout-btn {
+            background-color: rgba(255, 71, 87, 0.1);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .summerfest-logout-btn:hover {
+            background-color: rgba(255, 71, 87, 0.3);
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+        }
+
+        .calendar-container {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-orange);
+            position: relative;
+            width: 100%;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .calendar-title {
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            min-width: 120px;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .calendar-nav-btn {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.75rem;
+        }
+
+        .calendar-nav-btn:hover {
+            background-color: var(--accent-orange);
+        }
+
+        .calendar-scroll-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            margin: 0 -10px;
+            padding: 0 10px;
+            width: 100%;
+        }
+
+        .calendar-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .calendar-grid {
+            display: flex;
+            gap: 6px;
+            width: max-content;
+            min-width: 100%;
+            padding-bottom: 8px;
+        }
+
+        .calendar-day {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            padding: 8px;
+            min-height: 60px;
+            min-width: 50px;
+            border: 1px solid rgba(37, 225, 203, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calendar-day:hover {
+            border-color: var(--accent-orange);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-number {
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .today {
+            background-color: rgba(37, 225, 203, 0.1);
+            border-color: var(--accent-orange);
+        }
+
+        .tasks-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .task-section {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid var(--accent-orange);
+            width: 100%;
+        }
+
+        .task-section-title {
+            color: var(--accent-teal);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--accent-orange);
+        }
+
+        .task-item {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            border-left: 3px solid var(--pending);
+            width: 100%;
+        }
+
+        .task-item.completed {
+            border-left-color: var(--completed);
+            opacity: 0.7;
+        }
+
+        .task-item:hover {
+            transform: translateX(3px);
+        }
+
+        .task-checkbox {
+            margin-right: 8px;
+            min-width: 16px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .task-title {
+            flex: 1;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            word-break: break-word;
+        }
+
+        .task-reward {
+            background-color: var(--accent-orange);
+            color: var(--primary-dark);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            margin-left: 6px;
+            white-space: nowrap;
+        }
+
+        .progress-container {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            border: 1px solid var(--accent-orange);
+            width: 100%;
+        }
+
+        .progress-title {
+            color: var(--accent-teal);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .progress-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .progress-bar {
+            width: 100%;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .progress-track {
+            height: 6px;
+            background-color: var(--primary-dark);
+            border-radius: 3px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-orange);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: var(--primary-light);
+            width: 100%;
+        }
+
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            padding: 0 10px;
+        }
+
+        .footer-copyright {
+            color: var(--text-gray);
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        /* Медиа-запросы для адаптации */
+        @media (min-width: 576px) {
+            .summerfest-brand {
+                font-size: 1.6rem;
+            }
+            
+            .summerfest-nav-btn {
+                padding: 8px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .calendar-day {
+                min-width: 60px;
+            }
+            
+            .tasks-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                padding-top: 80px;
+            }
+            
+            .summerfest-header {
+                padding: 15px 0;
+            }
+            
+            .summerfest-brand {
+                font-size: 1.8rem;
+            }
+            
+            .summerfest-nav-list {
+                gap: 15px;
+            }
+            
+            .summerfest-nav-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            .calendar-container {
+                padding: 15px;
+            }
+            
+            .calendar-title {
+                font-size: 1.2rem;
+            }
+            
+            .calendar-nav-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .calendar-day {
+                min-width: 70px;
+                min-height: 70px;
+                font-size: 0.9rem;
+            }
+            
+            .task-section {
+                padding: 15px;
+            }
+            
+            .task-section-title {
+                font-size: 1.1rem;
+            }
+            
+            .progress-container {
+                padding: 15px;
+            }
+            
+            .progress-title {
+                font-size: 1.1rem;
+            }
+            
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .summerfest-header-container {
+                padding: 0 20px;
+            }
+            
+            .calendar-grid {
+                gap: 8px;
+            }
+            
+            .main-content {
+                padding: 30px;
+                padding-top: 90px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .main-content {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }

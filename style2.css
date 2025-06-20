@@ -1,0 +1,223 @@
+        :root {
+            --primary-dark: #222238;
+            --primary-light: #16213e;
+            --accent-orange: #25e1cb;
+            --accent-teal: #00b4d8;
+            --text-light: #f8f9fa;
+            --text-gray: #adb5bd;
+            --card-bg: #0f3460;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        body {
+            color: var(--text-light);
+            line-height: 1.7;
+            background-color: var(--primary-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+background: linear-gradient(rgba(22, 33, 62, 0.5), rgba(26, 26, 46, 0.7)), 
+                        url('../img/glavna2.jpg') center/cover no-repeat;
+        }
+a {
+  text-decoration: none;
+}
+        .auth-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--accent-orange);
+        }
+
+        .auth-header {
+            background-color: var(--card-bg);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--accent-orange);
+        }
+
+        .auth-header h1 {
+            color: var(--accent-orange);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: var(--primary-dark);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-gray);
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--text-light);
+            border-bottom-color: var(--accent-orange);
+            background-color: var(--primary-light);
+        }
+
+        .form-container {
+            padding: 30px;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form h2 {
+            color: var(--accent-teal);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--card-bg);
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+        }
+
+        .text-btn{
+         padding: 7px;
+        }
+        .btn {
+            width: 100%;
+            padding: 19px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-orange);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: #20c7b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 225, 203, 0.4);
+        }
+
+        .error {
+            color: #ff6b6b;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+      .text-btn {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-btn input[type="checkbox"] {
+    min-width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.text-btn span {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.text-btn span:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+        .form.active {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @media (max-width: 576px) {
+            .auth-container {
+                border-radius: 0;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .tab {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+          @media (min-width: 320px) {
+
+.text-btn span{
+    font-size: 10px;
+}
+.text-btn input[type="checkbox"]{
+    height: 13px;
+}
+
+          }
+           @media (min-width: 425px) {
+
+.text-btn span{
+    font-size: 14px;
+
+}.text-btn input[type="checkbox"]{
+    height: 20px;
+}
+
+          }
